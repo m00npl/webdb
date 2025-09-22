@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  webdb:
+    image: moonplkr/webdb-gateway:latest
+    container_name: webdb
+    environment:
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+      - DOMAIN=webdb.site
+      - GOLEM_CHAIN_ID=60138453025
+      - GOLEM_PRIVATE_KEY=0x54b3dbb50f964c32e9a9942fe46c0697c0af855c60a818a3447ed063f7f9be67
+      - GOLEM_RPC_URL=https://kaolin.holesky.golemdb.io/rpc
+      - GOLEM_WS_URL=wss://kaolin.holesky.golemdb.io/rpc/ws
+      - DBCHAIN_RPC_URL=https://kaolin.holesky.golemdb.io/rpc
+      - CORS_ORIGINS=*
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    networks:
+      - moon_golem_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.webdb.rule=Host(`webdb.site`) || HostRegexp(`{subdomain:[a-zA-Z0-9-_]+}.webdb.site`)"
+      - "traefik.http.services.webdb.loadbalancer.server.port=3000"
+
+networks:
+  moon_golem_network:
+    external: true

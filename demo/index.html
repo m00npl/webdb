@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Site - WebDB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌟 Demo Site</h1>
+            <p>Hosted on WebDB - Golem DB Storage</p>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h2>Welcome to WebDB Demo</h2>
+                <p>This is a demonstration of static site hosting using Golem DB as the storage backend.</p>
+                <img src="logo.png" alt="WebDB Logo" class="logo">
+            </section>
+
+            <section class="features">
+                <h3>✨ Features Demonstrated</h3>
+                <ul>
+                    <li>📄 Static HTML content</li>
+                    <li>🎨 CSS styling</li>
+                    <li>🖼️ Image assets</li>
+                    <li>⚡ JavaScript functionality</li>
+                    <li>🔗 Multiple file types</li>
+                </ul>
+            </section>
+
+            <section class="interactive">
+                <h3>🎯 Interactive Elements</h3>
+                <button id="clickBtn" class="demo-btn">Click me!</button>
+                <p id="counter">Clicks: 0</p>
+
+                <div class="color-picker">
+                    <label for="colorInput">Change theme color:</label>
+                    <input type="color" id="colorInput" value="#667eea">
+                </div>
+            </section>
+
+            <section class="upload-info">
+                <h3>📤 How this was uploaded</h3>
+                <pre><code>curl -X POST http://webdb.site/api/upload/demo \
+  -F "index.html=@index.html" \
+  -F "style.css=@style.css" \
+  -F "script.js=@script.js" \
+  -F "logo.png=@logo.png"</code></pre>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 WebDB Demo - Powered by Golem DB</p>
+            <p><a href="/">← Back to WebDB</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
