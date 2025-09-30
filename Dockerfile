@@ -33,9 +33,9 @@ RUN addgroup --system --gid 1001 webdb && \
 RUN chown -R webdb:webdb /app
 USER webdb
 
-# Health check
+# Health check using bun's fetch
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD curl -f http://localhost:3000/health || exit 1
+  CMD bun -e 'fetch("http://localhost:3000/health").then(r => r.ok ? process.exit(0) : process.exit(1)).catch(() => process.exit(1))'
 
 # Expose port
 EXPOSE 3000

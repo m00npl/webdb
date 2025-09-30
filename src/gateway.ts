@@ -11,7 +11,7 @@ const config: GatewayConfig = {
   port: Number(process.env.PORT) || 3000,
   hostname: process.env.HOSTNAME || '0.0.0.0',
   domain: process.env.DOMAIN || 'webdb.site',
-  dbChainRpcUrl: process.env.DBCHAIN_RPC_URL || process.env.GOLEM_RPC_URL || 'https://kaolin.holesky.golemdb.io/rpc',
+  dbChainRpcUrl: process.env.DBCHAIN_RPC_URL || process.env.GOLEM_RPC_URL || 'https://kaolin.hoodi.arkiv.network/rpc',
   maxFileSize: 2 * 1024 * 1024, // 2MB
   maxSiteSize: 50 * 1024 * 1024, // 50MB
   cors: {
@@ -483,7 +483,7 @@ const result = await response.json();</pre>
                 <p>All files are stored on Golem DB blockchain. View transactions at:</p>
                 <div class="code-block">
                     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                    <pre>https://explorer.kaolin.holesky.golemdb.io</pre>
+                    <pre>https://explorer.kaolin.hoodi.arkiv.network</pre>
                 </div>
             </div>
         </div>
@@ -1096,7 +1096,7 @@ function createLandingPage(): string {
                     const indexFile = result.files.find(f => f.path === 'index.html');
                     const entityKey = result.indexTxHash || indexFile?.txHash || 'N/A';
                     const siteUrl = '/' + siteId + '/';
-                    const explorerUrl = 'https://explorer.kaolin.holesky.golemdb.io/entity/' + encodeURIComponent(entityKey);
+                    const explorerUrl = 'https://explorer.kaolin.hoodi.arkiv.network/entity/' + encodeURIComponent(entityKey);
 
                     uploadResult.innerHTML = \`
                         <div style="font-size: 1.2rem; margin-bottom: 1rem;">
@@ -1505,7 +1505,7 @@ function createLandingPage(): string {
                     <h4>Resources</h4>
                     <a href="#api">API docs</a>
                     <a href="/health" target="_blank">Service status</a>
-                    <a href="https://explorer.kaolin.holesky.golemdb.io" target="_blank">Golem DB Explorer</a>
+                    <a href="https://explorer.kaolin.hoodi.arkiv.network" target="_blank">Golem DB Explorer</a>
                 </div>
                 <div class="footer-section">
                     <h4>Community</h4>

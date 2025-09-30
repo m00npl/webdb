@@ -23,7 +23,7 @@ export class GolemDBClient {
         defaultBTL?: number;
         privateKey: string;
     }) {
-        this.rpcUrl = config.rpcUrl || 'https://kaolin.holesky.golemdb.io/rpc';
+        this.rpcUrl = config.rpcUrl || 'https://kaolin.hoodi.arkiv.network/rpc';
         this.chainId = config.chainId || 0xE0087F821; // Kaolin Holesky
         this.storageContract = config.storageContract || "0x0000000000000000000000000000000060138453";
         this.defaultGasLimit = `0x${(config.gasLimit || 500000).toString(16)}`;

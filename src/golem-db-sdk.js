@@ -7,7 +7,7 @@
 
 class GolemDB {
     constructor(config = {}) {
-        this.rpcUrl = config.rpcUrl || 'https://kaolin.holesky.golemdb.io/rpc';
+        this.rpcUrl = config.rpcUrl || 'https://kaolin.hoodi.arkiv.network/rpc';
         this.chainId = config.chainId || 0xE0087F821; // Kaolin Holesky
         this.storageContract = config.storageContract || "0x0000000000000000000000000000000060138453";
         this.defaultGasLimit = config.gasLimit || 500000;
@@ -75,7 +75,7 @@ class GolemDB {
                                 decimals: 18
                             },
                             rpcUrls: [this.rpcUrl],
-                            blockExplorerUrls: ['https://explorer.kaolin.holesky.golemdb.io/']
+                            blockExplorerUrls: ['https://explorer.https://kaolin.hoodi.arkiv.network/rpc/']
                         }]
                     });
                 } else {
